@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		/*like*/
+		#like{
+	    background: #EA6F5A;
+	    color: white;
+	    padding: 13px 0 15px 0;
+	    font-size: 19px;
+	    border: 1px solid #EA6F5A;
+	    border-radius: 40px;
+	    width: 100px;
+	    position: relative;
+	    padding-left: 20px;
+	    cursor: pointer;
+	    text-align: center;
+		}
+		.like::before{
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 2px;
+      width: 50px;
+      height: 50px;
+      background-image: url(https://cdn2.jianshu.io/assets/web/like_animation_steps-62a00a7b52377d3069927cdb8e61fd34.png);
+      background-position: left;
+      background-repeat: no-repeat;
+      background-size: 1000px 50px;
+      background-position: right;
+    	animation:like 0.6s 1 steps(19);
+		}
+		@keyframes like{
+	    0%{background-position: left};
+	    100%{background-position: right};
+		}
+		.space {
+			height: 20px;
+		}
+		/*wifi*/
+		.wifi {
+			position: relative;
+			width: 70px;
+			height: 70px;
+			margin-left: 20px;
+			transform: rotate(-45deg) translate(0px);
+		}
+		.wifi-item {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			border-color: blue;
+			/*background-color: green;*/
+			border-style: solid;
+			border-width: 10px 10px 0 0;
+			border-radius: 0 100% 0 0;
+			/*background-color: blue;*/
+			box-sizing: border-box;
+			opacity: 0;
+			animation: wifianimation 3s infinite;
+		}
+		.wifi-item.one {
+			width: 10px;
+			height: 10px;
+			background-color: blue;
+			opacity: 1;
+			animation: none;
+		}
+		.wifi-item.two {
+			width: 30px;
+			height: 30px;
+			/*animation-delay: 200ms;*/
+		}
+		.wifi-item.three {
+			width: 50px;
+			height: 50px;
+			animation-delay: 400ms;
+		}
+		.wifi-item.four {
+			width: 100%;
+			height: 100%;
+			animation-delay: 800ms;
+		}
+		@keyframes wifianimation {
+			0% { opacity: 0.4 }
+		  5% { opactiy: 1 }
+		  6% { opactiy: 0.1 }
+		  100% { opactiy: 0.1; }
+		}
+	</style>
+</head>
+<body>
+	<!-- like -->
+	<div class="like"  onclick="like()" id="like">喜欢</div>
+	<div class="space"></div>
+	<!-- wifi -->
+	<div class="wifi">
+		<div class="wifi-item one"></div>
+		<div class="wifi-item two"></div>
+		<div class="wifi-item three"></div>
+		<div class="wifi-item four"></div>
+	</div>
+</body>
+</html>
